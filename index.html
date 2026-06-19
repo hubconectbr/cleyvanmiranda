@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleyvan Miranda | Advocacia Previdenciária</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter para leitura e Playfair Display para elegância clássica jurídica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              darkBg: '#09131b',     // Fundo ultra-escuro elegante
+              darkNavy: '#111f2c',   // Azul-marinho profundo do cartão
+              gold: '#cda571',       // Dourado premium principal
+              goldHover: '#e3be8b',  // Dourado com brilho ao passar o mouse
+              textGray: '#a0aec0',   // Cinza para textos secundários
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos personalizados para transições e elementos visuais ricos */
+    .glow-gold {
+      box-shadow: 0 0 20px rgba(205, 165, 113, 0.15);
+    }
+    .glow-gold-hover:hover {
+      box-shadow: 0 0 30px rgba(205, 165, 113, 0.35);
+    }
+    /* Estilização da barra de rolagem */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09131b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cda571;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e3be8b;
+    }
+  </style>
+</head>
+<body class="bg-brand-darkBg text-white font-sans antialiased overflow-x-hidden">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-brand-darkBg/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <img src="images/logo.png" alt="Cleyvan Miranda Advocacia" class="h-12 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.src='images/image_2dd422.png'; this.classList.add('h-8');">
+        <div class="hidden sm:block">
+          <span class="block text-xs uppercase tracking-widest text-brand-gold font-semibold">Advocacia</span>
+          <span class="block text-sm font-serif tracking-wide text-white">Previdenciária</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#inicio" class="text-sm font-medium hover:text-brand-gold transition-colors">Início</a>
+        <a href="#especialidades" class="text-sm font-medium hover:text-brand-gold transition-colors">Especialidades</a>
+        <a href="#sobre" class="text-sm font-medium hover:text-brand-gold transition-colors">O Advogado</a>
+        <a href="#contato" class="text-sm font-medium hover:text-brand-gold transition-colors">Contato</a>
+      </nav>
+
+      <!-- CTA Header Button -->
+      <div class="flex items-center gap-4">
+        <a href="https://wa.me/5563999711100" target="_blank" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-brand-darkBg bg-brand-gold rounded-full hover:bg-brand-goldHover transition-all duration-300 transform hover:-translate-y-0.5 glow-gold">
+          Agendar Consulta
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-brand-gold focus:outline-none" aria-label="Abrir Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-darkNavy border-b border-white/10 px-4 py-6 space-y-4">
+      <a href="#inicio" class="block text-base font-medium hover:text-brand-gold py-2 border-b border-white/5">Início</a>
+      <a href="#especialidades" class="block text-base font-medium hover:text-brand-gold py-2 border-b border-white/5">Especialidades</a>
+      <a href="#sobre" class="block text-base font-medium hover:text-brand-gold py-2 border-b border-white/5">O Advogado</a>
+      <a href="#contato" class="block text-base font-medium hover:text-brand-gold py-2">Contato</a>
+      <a href="https://wa.me/5563999711100" target="_blank" class="w-full flex items-center justify-center py-3 text-center text-sm font-semibold uppercase tracking-wider text-brand-darkBg bg-brand-gold rounded-lg hover:bg-brand-goldHover">
+        Falar com Especialista
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-b from-[#0e1c28] via-brand-darkBg to-brand-darkBg">
+    <!-- Ambient glowing backgrounds -->
+    <div class="absolute top-1/4 left-1/10 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text Details -->
+        <div class="lg:col-span-7 space-y-8 text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold uppercase tracking-widest">
+            <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Atendimento em Todo o Brasil
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif leading-tight font-bold tracking-tight">
+            Seu futuro previdenciário começa com a <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold font-semibold underline decoration-brand-gold/40">orientação certa.</span>
+          </h1>
+          
+          <p class="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
+            Advocacia altamente especializada em <strong class="text-brand-gold">Direito Previdenciário</strong>, com foco em prover atendimento humanizado, segurança jurídica e dedicação total para garantir a aposentadoria e os benefícios que você de fato merece.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a href="https://wa.me/5563999711100" target="_blank" class="inline-flex items-center justify-center px-8 py-4 bg-brand-gold text-brand-darkBg font-bold text-base rounded-xl hover:bg-brand-goldHover transition-all duration-300 transform hover:-translate-y-1 glow-gold-hover group">
+              <svg class="w-5 h-5 mr-3 text-brand-darkBg fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.588 2.019 14.113 1 11.512 1c-5.44 0-9.866 4.372-9.87 9.802 0 1.772.475 3.502 1.374 5.027L2.03 21.822l6.117-1.593z"/>
+              </svg>
+              Agendar Atendimento Especializado
+            </a>
+            <a href="#especialidades" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium text-base rounded-xl transition-all duration-300">
+              Conhecer Nossos Serviços
+            </a>
+          </div>
+
+          <!-- Bottom Micro-Badges -->
+          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/5">
+            <div class="text-left">
+              <span class="block text-brand-gold font-serif text-2xl font-bold">100%</span>
+              <span class="text-xs text-brand-textGray uppercase tracking-wider">Foco Previdenciário</span>
+            </div>
+            <div class="text-left border-l border-white/10 pl-4">
+              <span class="block text-brand-gold font-serif text-2xl font-bold">OAB-TO</span>
+              <span class="text-xs text-brand-textGray uppercase tracking-wider">Inscrição 9758</span>
+            </div>
+            <div class="text-left border-l border-white/10 pl-4">
+              <span class="block text-brand-gold font-serif text-2xl font-bold">Digital</span>
+              <span class="text-xs text-brand-textGray uppercase tracking-wider">Atendimento ágil</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Photo Frame with Gold Borders -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative group w-full max-w-[420px]">
+            <!-- Elegant glowing frame -->
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-gold to-amber-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            
+            <!-- main image layout -->
+            <div class="relative bg-brand-darkNavy p-3 rounded-2xl overflow-hidden border border-white/10">
+              <img src="images/dr.jpg" alt="Dr. Cleyvan Miranda Nascimento" class="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.02]" onerror="this.src='images/dr.jpg';">
+              
+              <!-- Floating Overlay Badge -->
+              <div class="absolute bottom-6 left-6 right-6 bg-brand-darkBg/95 backdrop-blur-md border border-brand-gold/30 p-4 rounded-xl">
+                <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider block">Direito Previdenciário</span>
+                <h3 class="text-base font-serif font-bold text-white mt-0.5">Cleyvan Miranda Nascimento</h3>
+                <p class="text-[11px] text-brand-textGray mt-1">OAB / TO 9758</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Pillars Section -->
+  <section class="py-12 bg-brand-darkNavy border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="flex gap-4 items-start p-6 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="p-3 bg-brand-gold/10 rounded-xl text-brand-gold shrink-0 border border-brand-gold/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <div>
+            <h4 class="text-lg font-serif font-semibold text-white">Atendimento Humanizado</h4>
+            <p class="text-sm text-brand-textGray mt-1 leading-relaxed">Entendemos a sua história e buscamos a solução com o respeito e o carinho que sua trajetória merece.</p>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="flex gap-4 items-start p-6 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="p-3 bg-brand-gold/10 rounded-xl text-brand-gold shrink-0 border border-brand-gold/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div>
+            <h4 class="text-lg font-serif font-semibold text-white">Especialização Focada</h4>
+            <p class="text-sm text-brand-textGray mt-1 leading-relaxed">Atuação exclusiva em Direito Previdenciário e no INSS, garantindo conhecimento profundo das leis.</p>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="flex gap-4 items-start p-6 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="p-3 bg-brand-gold/10 rounded-xl text-brand-gold shrink-0 border border-brand-gold/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2m4-.305V11a2 2 0 012-2h1M13.713 18a2 2 0 01-2.933-2.933l2.933 2.933z"/></svg>
+          </div>
+          <div>
+            <h4 class="text-lg font-serif font-semibold text-white">Atendimento em todo o Brasil</h4>
+            <p class="text-sm text-brand-textGray mt-1 leading-relaxed">Estrutura 100% digital que permite atender e resolver seu benefício no INSS de onde você estiver.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialties Section -->
+  <section id="especialidades" class="py-24 bg-brand-darkBg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-semibold text-brand-gold uppercase tracking-widest block">Como podemos ajudar você</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Nossas Especialidades Previdenciárias</h2>
+        <div class="w-24 h-1 bg-brand-gold mx-auto rounded"></div>
+        <p class="text-brand-textGray text-base">Atuamos de forma ágil administrativa (direto no INSS) e judicialmente para defender seus direitos conquistados.</p>
+      </div>
+
+      <!-- Specialties Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Planejamento -->
+        <div class="bg-brand-darkNavy border border-white/5 rounded-2xl p-8 hover:border-brand-gold/30 hover:scale-[1.01] transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white mb-3">Planejamento Previdenciário</h3>
+          <p class="text-brand-textGray text-sm leading-relaxed mb-6">Analise todas as regras de transição, tempo de contribuição e simule o valor exato para se aposentar com o maior benefício possível.</p>
+          <a href="https://wa.me/5563999711100?text=Olá! Gostaria de saber mais sobre Planejamento Previdenciário." target="_blank" class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-goldHover group-hover:translate-x-1 transition-all">
+            CONSULTAR SOBRE ESTE SERVIÇO &rarr;
+          </a>
+        </div>
+
+        <!-- Card 2: Aposentadoria por Tempo / Idade -->
+        <div class="bg-brand-darkNavy border border-white/5 rounded-2xl p-8 hover:border-brand-gold/30 hover:scale-[1.01] transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white mb-3">Aposentadorias em Geral</h3>
+          <p class="text-brand-textGray text-sm leading-relaxed mb-6">Aposentadoria por idade, tempo de contribuição, aposentadoria especial (trabalho sob risco/ruído), e regras de transição pós-reforma.</p>
+          <a href="https://wa.me/5563999711100?text=Olá! Gostaria de entender melhor as minhas regras de Aposentadoria." target="_blank" class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-goldHover group-hover:translate-x-1 transition-all">
+            CONSULTAR SOBRE ESTE SERVIÇO &rarr;
+          </a>
+        </div>
+
+        <!-- Card 3: Benefício por Incapacidade -->
+        <div class="bg-brand-darkNavy border border-white/5 rounded-2xl p-8 hover:border-brand-gold/30 hover:scale-[1.01] transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white mb-3">Auxílio-Doença e Invalidez</h3>
+          <p class="text-brand-textGray text-sm leading-relaxed mb-6">Restabelecimento de auxílio por incapacidade temporária (auxílio-doença) ou aposentadoria por incapacidade permanente negados pelo INSS.</p>
+          <a href="https://wa.me/5563999711100?text=Olá! Meu auxílio-doença foi negado ou cancelado e preciso de ajuda." target="_blank" class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-goldHover group-hover:translate-x-1 transition-all">
+            CONSULTAR SOBRE ESTE SERVIÇO &rarr;
+          </a>
+        </div>
+
+        <!-- Card 4: BPC / LOAS -->
+        <div class="bg-brand-darkNavy border border-white/5 rounded-2xl p-8 hover:border-brand-gold/30 hover:scale-[1.01] transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white mb-3">BPC / LOAS</h3>
+          <p class="text-brand-textGray text-sm leading-relaxed mb-6">Amparo assistencial para idosos carentes acima de 65 anos ou pessoas com deficiência de qualquer idade que não tenham meios de sustento.</p>
+          <a href="https://wa.me/5563999711100?text=Olá! Preciso de orientação sobre o benefício do BPC/LOAS." target="_blank" class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-goldHover group-hover:translate-x-1 transition-all">
+            CONSULTAR SOBRE ESTE SERVIÇO &rarr;
+          </a>
+        </div>
+
+        <!-- Card 5: Revisão de Benefícios -->
+        <div class="bg-brand-darkNavy border border-white/5 rounded-2xl p-8 hover:border-brand-gold/30 hover:scale-[1.01] transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 114 0v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white mb-3">Revisão de Benefício</h3>
+          <p class="text-brand-textGray text-sm leading-relaxed mb-6">Seu benefício foi calculado errado pelo INSS? Realizamos revisões complexas (como Revisão da Vida Toda ou erro de cálculo) para aumentar seu pagamento.</p>
+          <a href="https://wa.me/5563999711100?text=Olá! Já sou aposentado e gostaria de revisar o valor do meu benefício." target="_blank" class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-goldHover group-hover:translate-x-1 transition-all">
+            CONSULTAR SOBRE ESTE SERVIÇO &rarr;
+          </a>
+        </div>
+
+        <!-- Card 6: Pensão por Morte / Auxílio-Reclusão -->
+        <div class="bg-brand-darkNavy border border-white/5 rounded-2xl p-8 hover:border-brand-gold/30 hover:scale-[1.01] transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold flex items-center justify-center mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white mb-3">Pensão por Morte</h3>
+          <p class="text-brand-textGray text-sm leading-relaxed mb-6">Garantia e segurança financeira para dependentes (cônjuge, filhos menores ou pais dependentes) após a perda de um familiar provedor.</p>
+          <a href="https://wa.me/5563999711100?text=Olá! Preciso de orientações sobre o pedido de Pensão por Morte." target="_blank" class="inline-flex items-center text-xs font-semibold text-brand-gold hover:text-brand-goldHover group-hover:translate-x-1 transition-all">
+            CONSULTAR SOBRE ESTE SERVIÇO &rarr;
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Assessment Interactive Simulator Form -->
+  <section class="py-20 bg-brand-darkNavy border-t border-b border-white/5 relative">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(205,165,113,0.03),transparent)] pointer-events-none"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-xs font-semibold text-brand-gold uppercase tracking-widest block mb-3">Dúvidas sobre o INSS?</span>
+      <h2 class="text-3xl font-serif font-bold text-white mb-6">Simulador de Qualificação Rápida</h2>
+      <p class="text-brand-textGray text-sm max-w-2xl mx-auto mb-10">Responda rapidamente abaixo para receber um retorno preciso e prioritário pelo WhatsApp sobre o seu caso.</p>
+
+      <div class="bg-brand-darkBg border border-white/10 rounded-2xl p-6 sm:p-10 text-left glow-gold">
+        <form id="evaluation-form" onsubmit="sendPreEvaluation(event)" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Question 1 -->
+            <div>
+              <label for="eval-name" class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2">Seu Nome Completo</label>
+              <input type="text" id="eval-name" required placeholder="Digite seu nome..." class="w-full bg-brand-darkNavy border border-white/15 focus:border-brand-gold rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-all">
+            </div>
+
+            <!-- Question 2 -->
+            <div>
+              <label for="eval-goal" class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2">O que você precisa hoje?</label>
+              <select id="eval-goal" class="w-full bg-brand-darkNavy border border-white/15 focus:border-brand-gold rounded-lg px-4 py-3 text-white focus:outline-none transition-all">
+                <option value="Aposentar por Idade/Tempo">Quero me Aposentar por Idade ou Tempo</option>
+                <option value="Planejamento Previdenciário">Preciso de um Planejamento de Aposentadoria</option>
+                <option value="Resolver Benefício Negado/Bloqueado">Tenho um Benefício Negado ou Bloqueado no INSS</option>
+                <option value="Pedir Auxílio-Doença/BPC">Pedir Auxílio-Doença, Invalidez ou BPC LOAS</option>
+                <option value="Outro Serviço">Outro serviço ou dúvida específica</option>
+              </select>
+            </div>
+
+            <!-- Question 3 -->
+            <div>
+              <label for="eval-time" class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2">Tempo de Contribuição estimado</label>
+              <select id="eval-time" class="w-full bg-brand-darkNavy border border-white/15 focus:border-brand-gold rounded-lg px-4 py-3 text-white focus:outline-none transition-all">
+                <option value="Não sei informar">Não sei informar</option>
+                <option value="Menos de 15 anos">Menos de 15 anos de carteira</option>
+                <option value="Entre 15 e 30 anos">De 15 a 30 anos de carteira</option>
+                <option value="Mais de 30 anos">Mais de 30 anos de carteira</option>
+              </select>
+            </div>
+
+            <!-- Question 4 -->
+            <div>
+              <label for="eval-age" class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2">Qual a sua idade?</label>
+              <input type="number" id="eval-age" required min="16" max="100" placeholder="Ex: 58" class="w-full bg-brand-darkNavy border border-white/15 focus:border-brand-gold rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-all">
+            </div>
+
+          </div>
+
+          <!-- Question 5 (TextArea description) -->
+          <div>
+            <label for="eval-desc" class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2">Explique seu caso brevemente (Opcional)</label>
+            <textarea id="eval-desc" rows="3" placeholder="Ex: Trabalho há 20 anos exposto a ruído..." class="w-full bg-brand-darkNavy border border-white/15 focus:border-brand-gold rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none transition-all"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-4">
+            <button type="submit" class="w-full bg-brand-gold hover:bg-brand-goldHover text-brand-darkBg font-bold text-center py-4 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              Enviar Dados & Falar no WhatsApp
+            </button>
+            <p class="text-center text-[11px] text-brand-textGray mt-3">Ao enviar, uma janela do WhatsApp se abrirá com os dados preenchidos para darmos início imediato ao seu atendimento.</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Meet the Lawyer -->
+  <section id="sobre" class="py-24 bg-brand-darkBg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Lawyer Image Layout -->
+        <div class="lg:col-span-5 order-2 lg:order-1 flex justify-center">
+          <div class="relative group w-full max-w-[380px]">
+            <!-- Border styling mimicking premium attorney portrait -->
+            <div class="absolute inset-0 bg-brand-gold rounded-3xl translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5 duration-300"></div>
+            <div class="bg-brand-darkNavy p-2 rounded-3xl border border-white/10 overflow-hidden">
+              <img src="images/dr.jpg" alt="Dr. Cleyvan Miranda Nascimento" class="w-full h-auto object-cover rounded-2xl" onerror="this.src='images/dr.jpg';">
+            </div>
+          </div>
+        </div>
+
+        <!-- Lawyer Bio -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 text-left">
+          <span class="text-xs font-semibold text-brand-gold uppercase tracking-widest block">Advocacia de Confiança</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Cleyvan Miranda Nascimento</h2>
+          <p class="text-sm text-brand-gold font-medium uppercase tracking-widest border-b border-brand-gold/20 pb-4">Inscrição Profissional: OAB - TO 9758</p>
+          
+          <p class="text-brand-textGray leading-relaxed text-base">
+            O Dr. <strong class="text-white">Cleyvan Miranda Nascimento</strong> é um advogado especialista em Direito Previdenciário com foco na proteção social de trabalhadores, aposentados e beneficiários do INSS. Sua missão é traduzir a complexidade do sistema de previdência social para que as pessoas compreendam e alcancem seus verdadeiros direitos de forma rápida e segura.
+          </p>
+          <p class="text-brand-textGray leading-relaxed text-base">
+            Com uma estrutura operacional digital e moderna, o escritório elimina as barreiras físicas, prestando serviços jurídicos de alta excelência em todo o território nacional. Atendimento ágil, personalizado e transparente, desde a análise inicial até a concessão final do benefício.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-gold flex items-center justify-center shrink-0">✓</span>
+              <span class="text-sm font-medium text-white">Análise individual sem termos técnicos</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-gold flex items-center justify-center shrink-0">✓</span>
+              <span class="text-sm font-medium text-white">Transparência total em cada etapa</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-gold flex items-center justify-center shrink-0">✓</span>
+              <span class="text-sm font-medium text-white">Segurança de dados e processos</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-gold flex items-center justify-center shrink-0">✓</span>
+              <span class="text-sm font-medium text-white">Suporte ativo pós-concessão</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-brand-darkNavy relative border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16 space-y-4">
+        <span class="text-xs font-semibold text-brand-gold uppercase tracking-widest block">Perguntas Frequentes</span>
+        <h2 class="text-3xl font-serif font-bold text-white">Dúvidas Comuns Previdenciárias</h2>
+        <div class="w-20 h-0.5 bg-brand-gold mx-auto"></div>
+      </div>
+
+      <div class="space-y-4 text-left">
+        
+        <!-- Accordion 1 -->
+        <div class="border border-white/10 rounded-xl bg-brand-darkBg overflow-hidden transition-all duration-300">
+          <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center px-6 py-5 text-left text-white hover:text-brand-gold focus:outline-none">
+            <span class="font-serif font-semibold text-base sm:text-lg">Quanto tempo de contribuição eu preciso para me aposentar?</span>
+            <span id="faq-icon-1" class="text-brand-gold font-bold text-xl transition-transform duration-300">+</span>
+          </button>
+          <div id="faq-answer-1" class="hidden px-6 pb-6 text-sm text-brand-textGray leading-relaxed border-t border-white/5 pt-4">
+            Isso varia conforme o seu caso e gênero. Pela regra geral após a Reforma (2019), mulheres precisam de pelo menos 15 anos de contribuição e 62 anos de idade, e homens necessitam de 20 anos de contribuição e 65 anos de idade. No entanto, existem diversas Regras de Transição que podem antecipar ou aumentar o valor de quem já contribuía antes da Reforma.
+          </div>
+        </div>
+
+        <!-- Accordion 2 -->
+        <div class="border border-white/10 rounded-xl bg-brand-darkBg overflow-hidden transition-all duration-300">
+          <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center px-6 py-5 text-left text-white hover:text-brand-gold focus:outline-none">
+            <span class="font-serif font-semibold text-base sm:text-lg">O que é e para que serve o Planejamento Previdenciário?</span>
+            <span id="faq-icon-2" class="text-brand-gold font-bold text-xl transition-transform duration-300">+</span>
+          </button>
+          <div id="faq-answer-2" class="hidden px-6 pb-6 text-sm text-brand-textGray leading-relaxed border-t border-white/5 pt-4">
+            O Planejamento Previdenciário é um estudo aprofundado do histórico de trabalho do cliente. Ele serve para identificar erros no CNIS (cadastro do INSS), descobrir períodos trabalhados que não constam no sistema (como trabalho rural ou insalubre) e simular qual o melhor momento financeiro para realizar o pedido da aposentadoria, evitando que você perca dinheiro pedindo o benefício na regra errada.
+          </div>
+        </div>
+
+        <!-- Accordion 3 -->
+        <div class="border border-white/10 rounded-xl bg-brand-darkBg overflow-hidden transition-all duration-300">
+          <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center px-6 py-5 text-left text-white hover:text-brand-gold focus:outline-none">
+            <span class="font-serif font-semibold text-base sm:text-lg">Meu benefício foi negado pelo INSS. O que devo fazer?</span>
+            <span id="faq-icon-3" class="text-brand-gold font-bold text-xl transition-transform duration-300">+</span>
+          </button>
+          <div id="faq-answer-3" class="hidden px-6 pb-6 text-sm text-brand-textGray leading-relaxed border-t border-white/5 pt-4">
+            Primeiramente, não se desespere. O INSS nega milhares de pedidos de forma automatizada por falta de documentos ou falhas de análise. Você tem o direito de recorrer administrativamente ou ingressar com uma ação judicial para garantir seu benefício, frequentemente recebendo os valores retroativos desde o dia do primeiro pedido de forma corrigida. Um advogado especialista pode agilizar esse processo.
+          </div>
+        </div>
+
+        <!-- Accordion 4 -->
+        <div class="border border-white/10 rounded-xl bg-brand-darkBg overflow-hidden transition-all duration-300">
+          <button onclick="toggleFaq(4)" class="w-full flex justify-between items-center px-6 py-5 text-left text-white hover:text-brand-gold focus:outline-none">
+            <span class="font-serif font-semibold text-base sm:text-lg">É possível fazer todo o processo de forma online/digital?</span>
+            <span id="faq-icon-4" class="text-brand-gold font-bold text-xl transition-transform duration-300">+</span>
+          </button>
+          <div id="faq-answer-4" class="hidden px-6 pb-6 text-sm text-brand-textGray leading-relaxed border-t border-white/5 pt-4">
+            Sim! Atualmente o INSS opera de forma 100% digital através da plataforma Meu INSS. Isso nos permite protocolar requerimentos, enviar provas, assinar contratos e até propor ações judiciais sem que você precise sair de casa, não importa em qual cidade ou estado do Brasil você esteja localizado.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Business Card Interactive Section -->
+  <section id="contato" class="py-24 bg-brand-darkBg relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-semibold text-brand-gold uppercase tracking-widest block">Cartão Digital Interativo</span>
+        <h2 class="text-3xl font-serif font-bold text-white">Nossos Canais de Contato</h2>
+        <p class="text-brand-textGray text-sm">Fale diretamente conosco ou salve os dados do Dr. Cleyvan utilizando o nosso cartão digital interativo abaixo.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Interactive Card Representation (Double Logo Size implemented here as requested) -->
+        <div class="lg:col-span-7 flex justify-center">
+          <div class="w-full max-w-2xl bg-[#1b2d32] border-2 border-brand-gold/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden transition-transform hover:scale-[1.01] duration-300">
+            <!-- Background gold ambient touch -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full blur-2xl"></div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-8 items-center">
+              
+              <!-- Left side: Brand Logo (Enlarged with w-48 according to user feedback) -->
+              <div class="sm:col-span-5 flex flex-col items-center justify-center border-b sm:border-b-0 sm:border-r border-brand-gold/20 pb-6 sm:pb-0 sm:pr-8 text-center">
+                <img src="images/logo.png" alt="Cleyvan Miranda Advocacia" class="w-48 h-auto object-contain mb-4 transition-transform hover:scale-105" onerror="this.src='images/image_2dd422.png';">
+              </div>
+
+              <!-- Right side: Dr. Info from image_2c15ff.png -->
+              <div class="sm:col-span-7 space-y-6 text-left">
+                <div>
+                  <h4 class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide">Cleyvan Miranda Nascimento</h4>
+                  <p class="text-sm font-semibold text-brand-gold uppercase tracking-wider mt-1">OAB - TO 9758</p>
+                </div>
+
+                <div class="space-y-4">
+                  <!-- Phone item -->
+                  <a href="tel:5563999711100" class="flex items-center gap-3 text-white hover:text-brand-gold transition-colors group">
+                    <span class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 border border-brand-gold/20 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </span>
+                    <span class="text-base sm:text-lg font-medium font-mono text-gray-200">(63) 99971-1100</span>
+                  </a>
+
+                  <!-- Email item -->
+                  <a href="mailto:cleyvan.m.nascimento@gmail.com" class="flex items-center gap-3 text-white hover:text-brand-gold transition-colors group">
+                    <span class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 border border-brand-gold/20 group-hover:bg-brand-gold group-hover:text-brand-darkBg transition-all">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </span>
+                    <span class="text-sm sm:text-base font-medium text-gray-200 break-all">cleyvan.m.nascimento@gmail.com</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Card Bottom Actions -->
+            <div class="mt-8 pt-6 border-t border-brand-gold/20 flex flex-wrap gap-4 justify-between items-center text-xs">
+              <span class="text-brand-textGray uppercase tracking-wider">Aguardando o lançamento do novo site.</span>
+              <div class="flex gap-2">
+                <button onclick="copyToClipboard('cleyvan.m.nascimento@gmail.com', 'E-mail copiado!')" class="px-4 py-2 bg-brand-gold/15 hover:bg-brand-gold text-brand-gold hover:text-brand-darkBg font-semibold rounded-lg transition-all duration-200">
+                  Copiar E-mail
+                </button>
+                <button onclick="copyToClipboard('(63) 99971-1100', 'Telefone copiado!')" class="px-4 py-2 bg-brand-gold/15 hover:bg-brand-gold text-brand-gold hover:text-brand-darkBg font-semibold rounded-lg transition-all duration-200">
+                  Copiar Telefone
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Form / Call to Action sidebar -->
+        <div class="lg:col-span-5 space-y-6 text-left">
+          <h3 class="text-2xl font-serif font-bold text-white">Como prefere conversar?</h3>
+          <p class="text-brand-textGray text-sm">Escolha o canal que seja mais conveniente para você. Estamos prontos para responder imediatamente.</p>
+          
+          <div class="space-y-4">
+            
+            <!-- Option 1: WhatsApp -->
+            <a href="https://wa.me/5563999711100" target="_blank" class="flex items-center gap-4 p-4 bg-brand-darkNavy border border-white/5 rounded-xl hover:border-brand-gold/30 transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.588 2.019 14.113 1 11.512 1c-5.44 0-9.866 4.372-9.87 9.802 0 1.772.475 3.502 1.374 5.027L2.03 21.822l6.117-1.593z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white group-hover:text-brand-gold transition-colors">Iniciar conversa via WhatsApp</h4>
+                <p class="text-xs text-brand-textGray mt-0.5">Resposta instantânea em horário comercial.</p>
+              </div>
+            </a>
+
+            <!-- Option 2: Phone Call -->
+            <a href="tel:5563999711100" class="flex items-center gap-4 p-4 bg-brand-darkNavy border border-white/5 rounded-xl hover:border-brand-gold/30 transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white group-hover:text-brand-gold transition-colors">Ligar por Telefone</h4>
+                <p class="text-xs text-brand-textGray mt-0.5">Fale diretamente pelo número (63) 99971-1100.</p>
+              </div>
+            </a>
+
+            <!-- Option 3: Email -->
+            <a href="mailto:cleyvan.m.nascimento@gmail.com" class="flex items-center gap-4 p-4 bg-brand-darkNavy border border-white/5 rounded-xl hover:border-brand-gold/30 transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 19v-8.93a2 2 0 01.89-1.664l8-5.333a2 2 0 012.22 0l8 5.333A2 2 0 0121 10.07V19a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white group-hover:text-brand-gold transition-colors">Enviar um E-mail</h4>
+                <p class="text-xs text-brand-textGray mt-0.5">Envie documentos para análise: cleyvan.m.nascimento@gmail.com</p>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-darkNavy border-t border-white/5 py-12 text-sm text-brand-textGray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-white/5 pb-8 mb-8">
+        
+        <!-- Logo and Slogan -->
+        <div class="flex items-center gap-4">
+          <img src="images/logo.png" alt="Cleyvan Miranda" class="h-20 w-auto" onerror="this.src='images/image_2dd422.png'; this.classList.add('h-12');">
+          <div class="text-left">
+            <span class="block text-white font-serif font-bold">Cleyvan Miranda</span>
+            <span class="block text-xs uppercase tracking-widest text-brand-gold">Advocacia Previdenciária</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap gap-6 justify-center">
+          <a href="#inicio" class="hover:text-brand-gold transition-colors">Início</a>
+          <a href="#especialidades" class="hover:text-brand-gold transition-colors">Especialidades</a>
+          <a href="#sobre" class="hover:text-brand-gold transition-colors">O Advogado</a>
+          <a href="#contato" class="hover:text-brand-gold transition-colors">Contato</a>
+        </div>
+
+      </div>
+
+      <!-- Legal Info and Copyright -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-xs">
+        <div class="space-y-1">
+          <p>&copy; 2026 Cleyvan Miranda Advocacia Previdenciária. Todos os direitos reservados.</p>
+          <p class="text-brand-textGray/60">Cleyvan Miranda Nascimento - OAB/TO 9758. Atendimento Nacional Digital.</p>
+        </div>
+        <p class="text-brand-textGray/60">Desenvolvido com sofisticação e responsividade.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Toast Notification System (Replaces alert) -->
+  <div id="toast-notification" class="fixed bottom-6 left-6 z-50 bg-brand-darkNavy border border-brand-gold text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none">
+    <span class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-sm font-bold">i</span>
+    <span id="toast-message" class="text-xs sm:text-sm font-semibold">Mensagem de aviso aqui...</span>
+  </div>
+
+  <!-- Floating Animated WhatsApp Badge -->
+  <a href="https://wa.me/5563999711100" target="_blank" class="fixed right-6 bottom-6 z-50 bg-[#25d366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform group animate-bounce" title="Fale conosco agora">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.588 2.019 14.113 1 11.512 1c-5.44 0-9.866 4.372-9.87 9.802 0 1.772.475 3.502 1.374 5.027L2.03 21.822l6.117-1.593z"/>
+    </svg>
+    <!-- Tooltip badge -->
+    <span class="absolute right-16 bg-brand-darkNavy text-white text-xs font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap shadow-md border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      Fale com Especialista
+    </span>
+  </a>
+
+  <!-- JavaScript Operations -->
+  <script>
+    // Mobile menu drawer controller
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on clicking any navigation anchor
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Toggle FAQ Accordions smoothly
+    function toggleFaq(id) {
+      const answer = document.getElementById(`faq-answer-${id}`);
+      const icon = document.getElementById(`faq-icon-${id}`);
+      
+      const isOpen = !answer.classList.contains('hidden');
+      
+      // Close all FAQs first
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`faq-answer-${i}`).classList.add('hidden');
+        document.getElementById(`faq-icon-${i}`).textContent = '+';
+      }
+
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        icon.textContent = '−';
+      }
+    }
+
+    // Interactive Pre-Evaluation WhatsApp formulation
+    function sendPreEvaluation(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('eval-name').value.trim();
+      const goal = document.getElementById('eval-goal').value;
+      const time = document.getElementById('eval-time').value;
+      const age = document.getElementById('eval-age').value;
+      const desc = document.getElementById('eval-desc').value.trim();
+
+      let message = `Olá Dr. Cleyvan Miranda! Acabei de preencher a pré-avaliação no site:\n\n`;
+      message += `*Nome:* ${name}\n`;
+      message += `*Objetivo:* ${goal}\n`;
+      message += `*Tempo Contribuição:* ${time}\n`;
+      message += `*Idade:* ${age} anos\n`;
+      if (desc) {
+        message += `*Detalhes:* ${desc}\n`;
+      }
+
+      const encodedMessage = encodeURIComponent(message);
+      // Main WhatsApp Link from Dr's Business Card Contact (63) 99971-1100
+      const whatsappURL = `https://wa.me/5563999711100?text=${encodedMessage}`;
+      
+      // Open WhatsApp tab smoothly
+      window.open(whatsappURL, '_blank');
+    }
+
+    // Dynamic toast notification system (No alert allowed!)
+    function showToast(message) {
+      const toast = document.getElementById('toast-notification');
+      const toastMessage = document.getElementById('toast-message');
+      
+      toastMessage.textContent = message;
+      
+      // Show
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      // Hide after 3.5 seconds
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    // Copy to clipboard fallback logic matching constraints
+    function copyToClipboard(text, successMessage) {
+      // Create element for copy fallback action
+      const tempElement = document.createElement('textarea');
+      tempElement.value = text;
+      document.body.appendChild(tempElement);
+      tempElement.select();
+      
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          showToast(successMessage);
+        } else {
+          showToast('Erro ao copiar dados.');
+        }
+      } catch (err) {
+        showToast('Navegador incompatível com cópia automática.');
+      }
+      
+      document.body.removeChild(tempElement);
+    }
+  </script>
+
+</body>
+</html>
